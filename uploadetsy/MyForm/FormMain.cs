@@ -26,7 +26,7 @@ namespace uploadetsy.MyForm
 
         private Thread _threadStart = null;
         private List<ObjList> _list = null;
-        private int _SleepKeyChar = 100;
+        private int _SleepKeyChar = 50;
         private int _SleepNextInput = 5000;
         private String[] arrCache = new String[3];
 
@@ -273,6 +273,16 @@ namespace uploadetsy.MyForm
                 String x = openFileChrome.FileName;
                 txtPathChromeExe.Text = x;
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
     #endregion

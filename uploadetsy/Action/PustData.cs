@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using uploadetsy.MyForm;
 using uploadetsy.MyObj;
 using OpenQA.Selenium.Support.UI;
+using System.Windows.Forms;
 
 namespace uploadetsy.Action
 {
@@ -33,7 +34,7 @@ namespace uploadetsy.Action
 
         #endregion
 
-
+        public delegate void RunDead();
         #region Pust Data
         public void PushData(List<ObjList> _list, FormMain main, ChromeDriver _chromeDriver, Thread thread)
         {
@@ -69,11 +70,11 @@ namespace uploadetsy.Action
                     // - 1 thi lam khong bo qua
                     //  if (indexSkip != -1) continue;
                     // MOi Trang Web Cần thanh đôi
-                    _chromeDriver.Navigate().GoToUrl($@"{url}/{_list[i].ID_Clone}");
+                    _chromeDriver.Navigate().GoToUrl($@"{url}/{_list[i].ID_Clone}/copy");
 
 
                     // Click Copy
-                    ClickCopy(_chromeDriver);
+                    //ClickCopy(_chromeDriver);
 
                     Thread.Sleep(SK);
                     DeleteImgs(main, _chromeDriver);
@@ -94,7 +95,6 @@ namespace uploadetsy.Action
                     Thread.Sleep(SK);
                     DowloadImgEndUpload(_list[i].Link5, _Name5, main, _chromeDriver);
                     // Xoa Title
-
 
                     // Nhap Title
                     main.WriteTitleAtion("Nhập Title", Color.Black);
@@ -144,6 +144,9 @@ namespace uploadetsy.Action
             }
 
         }
+
+        // cài thời gian chết cho app
+        
 
         private void Section(String section, FormMain main, ChromeDriver _chromeDriver)
         {
@@ -267,7 +270,15 @@ namespace uploadetsy.Action
             {
                 main.WriteTitleAtion("Xóa Ảnh", Color.Black);
                 int count = 0;
-                count = _chromeDriver.FindElementsByXPath("//button[@title='Delete photo']").Count;
+                try
+                {
+                    count = _chromeDriver.FindElementsByXPath("//button[@title='Delete photo']").Count;
+                }
+                catch(Exception)
+                {
+                    return;
+                }
+                
                 while (count > 0)
                 {
                     var btnsubmit = _chromeDriver.FindElementsByXPath("//button[@title='Delete photo']");

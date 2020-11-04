@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using uploadetsy.Action;
 using uploadetsy.MyForm;
 
 namespace uploadetsy
@@ -16,10 +18,12 @@ namespace uploadetsy
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormMain());
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
 
+                Application.Run(new FormMain());
+
+            
         }
     }
 }

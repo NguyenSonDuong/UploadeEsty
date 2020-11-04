@@ -84,7 +84,7 @@ namespace uploadetsy.Action
                         _options.AddArgument("disable-infobars");
                         _options.AddArgument("--silent");
 
-                        //  _options.AddArgument("--no-sandbox");
+                        // _options.AddArgument("--no-sandbox");
                         // _options.AddArgument("--disable-dev-shm-usage");
                         // _options.AddArgument("--disable-setuid-sandbox");
 
