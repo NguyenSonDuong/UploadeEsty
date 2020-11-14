@@ -15,14 +15,12 @@ namespace uploadetsy.MyObj
         {
             SKU = sku.Trim(); 
             Title = title.Trim();
-
             Tag = tag.Trim();
             ID_Clone = id.Trim();
             Section = section.Trim();
             Link1 = link1.Trim();
             Link2 = link2.Trim();
             Link3 = link3.Trim();
-
             Link4 = link4.Trim();
             Link5 = link5.Trim();
         }

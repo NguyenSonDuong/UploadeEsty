@@ -259,7 +259,6 @@ namespace uploadetsy.Action
             {
                 // main.WriteLog($@"Lỗi Tải anh ==>:{link}", Color.Red);
                 // main.WriteLog($@"Lỗi Tải anh ==>:{e.ToString()}", Color.Red);
-
             }
 
         }
